@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>To Do List</h1>
-  
+  <% if(todos.length){ %>
   <ul>
     <% todos.forEach(function(t, idx) { %>
       
@@ -23,6 +23,9 @@
       </li>
     <% }); %>
   </ul>
+  <% } else { %>
+    <h3>There are no To Do yet!</h3>
+    <% } %>
   
   <form action="/todos" method="POST" autocomplete="off">
     <input type="text" name="todo">
